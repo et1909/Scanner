@@ -74,14 +74,14 @@ func GetPort(hostname string, ports int) { // This function takes in the hostnam
 			if err := chromedp.Run(ctx, fullScreenshot("http://"+hostname, 1080, &buf)); err != nil { // chromedp.Run will run the function fullScreenshot as a process of the context that we just declared.
 				log.Fatal(err)
 			}
-			if err := ioutil.WriteFile(hostname, buf, 0644); err != nil { //the i/o package is used to make input/output to perform a task. We have put thr WriteFile function which writes file to the directory the script has been run.
+			if err := ioutil.WriteFile(hostname+"http", buf, 0644); err != nil { //the i/o package is used to make input/output to perform a task. We have put thr WriteFile function which writes file to the directory the script has been run.
 				fmt.Println("Not Found")
 			}
 		} else if ports == 443 {
 			if err := chromedp.Run(ctx, fullScreenshot("https://"+hostname, 1080, &buf)); err != nil { // chromedp.Run will run the function fullScreenshot as a process of the context that we just declared.
 				log.Fatal(err)
 			}
-			if err := ioutil.WriteFile(hostname, buf, 0644); err != nil { //the i/o package is used to make input/output to perform a task. We have put thr WriteFile function which writes file to the directory the script has been run.
+			if err := ioutil.WriteFile(hostname+"https", buf, 0644); err != nil { //the i/o package is used to make input/output to perform a task. We have put thr WriteFile function which writes file to the directory the script has been run.
 				fmt.Println("Not Found")
 			}
 		}
