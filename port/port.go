@@ -43,16 +43,20 @@ func GetPort(hostname string, ports int) {
 		var buf []byte
 		if ports == 80 {
 			if err := chromedp.Run(ctx, fullScreenshot("http://"+hostname, 1080, &buf)); err != nil { 
+				fmt.Println(hostname)
 				fmt.Println(err)
 			}
 			if err := ioutil.WriteFile(hostname+"http", buf, 0644); err != nil { 
+				fmt.Println(hostname)
 				fmt.Println("Not Found")
 			}
 		} else if ports == 443 {
 			if err := chromedp.Run(ctx, fullScreenshot("https://"+hostname, 1080, &buf)); err != nil { 
+				fmt.Println(hostname)
 				fmt.Println(err)
 			}
 			if err := ioutil.WriteFile(hostname+"https", buf, 0644); err != nil { 
+				fmt.Println(hostname)
 				fmt.Println("Not Found")
 			}
 		}
