@@ -21,7 +21,6 @@ func main() {
 
 	file_scan := bufio.NewScanner(file_open) // bufio or 'buffer input/output it takes the io.Reader or io.Writer object and wraps around it to create another object giving a buffer space for thr input/output'
 	for file_scan.Scan() {                   // bufio.NewScanner(variable_name) scans/read lines from the file that was given by the user and for each line that is read by NewScanner(), .Scan() scans each line and if finds a input that it cannot recognises, it will send it to error and the error will be output except EOF.
-		fmt.Println(file_scan.Text())
 		portlist := []int{80, 443}
 		for _, value := range portlist {
 
