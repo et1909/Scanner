@@ -2,7 +2,7 @@
 
 
 
-<b> Takes all your subdomains and checks for Port 80 and Port 443, then screenshots the website page, if the page is available. </b>
+<b> Takes all your subdomains and checks for Port 80 and Port 443, then screenshots the webpage.</b>
 
 
 <br>
